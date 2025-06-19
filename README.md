@@ -26,7 +26,7 @@ Install with:
 ```bash
 sudo apt install python3 python3-pip
 pip3 install psutil requests
-
+```
 
 # Setup Guide
 
@@ -35,31 +35,33 @@ pip3 install psutil requests
 ```bash
 git clone https://github.com/Abhinavu-T-Rajan/LoadWatcher.git
 cd LoadWatcher
+```
 
 ### 2. Configure your webhook
 
 ```bash
 nano loadwatcher.py
+```
 
 ```python
 WEBHOOK_URL = "https://your-webhook-url-here"
-
+```
 
 ### Make it executable
 
 ```bash
 chmod +x loadwatcher.py
-
+```
 **(Optional) Move to a global path:**
 
 ```bash
 sudo cp loadwatcher.py /usr/local/bin/loadwatcher
-
+```
 # Create a systemd service
 
 ```bash
 sudo nano /etc/systemd/system/loadwatcher.service
-
+```
 then
 
 ```service
@@ -74,6 +76,7 @@ User=root
 
 [Install]
 WantedBy=multi-user.target
+```
 
 ### Enable & start
 
@@ -81,10 +84,11 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 sudo systemctl enable loadwatcher
 sudo systemctl start loadwatcher
+```
 
 ### Check status
 
 ```bash
 sudo systemctl status loadwatcher
 
-
+```
